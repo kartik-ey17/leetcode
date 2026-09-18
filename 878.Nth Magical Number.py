@@ -1,7 +1,7 @@
 import math
 def nthMagicalNumber(n,a,b):
     mod = 10**9 + 7
-    lcm = (a+b)/(a*b)
+    lcm = math.lcm(a,b)
     l = min(a,b)
     r = n*l
 

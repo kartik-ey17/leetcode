@@ -11,4 +11,3 @@ def minSubArrayLen(target , nums):
             curr_sum -= nums[l]
             l += 1
     return min_len if min_len != float("inf") else 0
-print(minSubArrayLen(11,[1,1,1,1,1,1,1,1]))

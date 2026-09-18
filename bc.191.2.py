@@ -6,7 +6,7 @@ def specialNumbers(nums):
         hmap[n].append(i)
     res = 0
     for h in hmap.values():
-        if len(h) > 3 :
+        if len(h) < 3 :
             continue
         space = h[1] - h[0]
         s = True
