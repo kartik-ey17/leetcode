@@ -1,0 +1,18 @@
+import math
+class Solution:   
+    def numOfWays(self, nums: List[int]) -> int:
+        mod = 10**9+7
+        def Subproblem(nums: List[int]):
+            n = len(nums)
+            if n <= 2: 
+                return 1
+            root = nums[0]
+            left = []
+            right = []
+            for y in nums[1:]:
+                if y < root: 
+                    left.append(y)
+                else: 
+                    right.append(y)
+            return Subproblem(right)*Subproblem(left) % mod*math.comb(len(nums)-1 , len(left)) % mod
+        return int((Subproblem(nums)-1) % mod)
